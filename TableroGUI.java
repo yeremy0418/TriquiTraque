@@ -8,8 +8,6 @@ public class TableroGUI extends JFrame {
     private final int tamaño;
     private final JButton[][] botones;
     private char jugadorActual = 'X'; 
-    private String nombreJugador1;
-    private String nombreJugador2;
     private int puntuacionJugador1 = 0;
     private int puntuacionJugador2 = 0;
     private Menu menuPrincipal;
@@ -76,16 +74,18 @@ public class TableroGUI extends JFrame {
                 } else {
                     puntuacionJugador2++;
                 }
-                JOptionPane.showMessageDialog(this, jugadorActual + " gana! Puntuación: " + nombreJugador1 + " "
-                        + puntuacionJugador1 + " - " + nombreJugador2 + " " + puntuacionJugador2);
+                JOptionPane.showMessageDialog(this, jugadorActual + " gana! Puntuación: " + menuPrincipal.nombreJ1() + " "
+                        + puntuacionJugador1 + " - " + menuPrincipal.nombreJ2() + " " + puntuacionJugador2);
+                        ;
                 reiniciarJuego();
             } else if (tableroLogico.verificarEmpate()) {
-                JOptionPane.showMessageDialog(this, "Empate! Puntuación: " + nombreJugador1 + " " + puntuacionJugador1
-                        + " - " + nombreJugador2 + " " + puntuacionJugador2);
+                JOptionPane.showMessageDialog(this, "Empate! Puntuación: " + menuPrincipal.nombreJ1() + " " + puntuacionJugador1
+                        + " - " + menuPrincipal.nombreJ2() + " " + puntuacionJugador2);
                 reiniciarJuego();
             } else {
                 jugadorActual = (jugadorActual == 'X') ? 'O' : 'X';
             }
+
         } else {
             JOptionPane.showMessageDialog(this, "Casilla ocupada o jugada inválida.");
         }

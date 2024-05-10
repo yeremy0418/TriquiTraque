@@ -16,6 +16,10 @@ public class Tablero {
         }
     }
 
+    public char[][] getTablero() {
+        return tablero;
+    }
+
     public boolean colocarFicha(int fila, int columna, char ficha) {
         if (fila >= 0 && fila < tamaño && columna >= 0 && columna < tamaño && tablero[fila][columna] == ' ') {
             tablero[fila][columna] = ficha;

@@ -3,8 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class Menu extends JFrame {
-    private JTextField nombreJugador1;
-    private JTextField nombreJugador2;
+    private JTextField nombreJugador1 = new JTextField("Jugador1");
+    private JTextField nombreJugador2 = new JTextField("Jugador2");
     private JButton colorJugador1;
     private JButton colorJugador2;
     private JComboBox<String> tamañoTablero;
@@ -14,6 +14,14 @@ public class Menu extends JFrame {
 
     public Menu() {
         initUI();
+    }
+
+    public JTextField getNombreJugador1() {
+        return nombreJugador1;
+    }
+
+    public JTextField getNombreJugador2() {
+        return nombreJugador2;
     }
 
     public Color getSeleccionColorJugador1() {
@@ -108,4 +116,13 @@ public class Menu extends JFrame {
         SwingUtilities.invokeLater(
                 () -> new TableroGUI(tamaño, jugador1, seleccionColorJugador1, jugador2, seleccionColorJugador2, this));
     }
+
+    public String nombreJ1() {
+        return nombreJugador1.getText();
+    }
+
+    public String nombreJ2() {
+        return nombreJugador2.getText();
+    }
+
 }
